@@ -1,7 +1,30 @@
-
+body,html{height:100%;-webkit-tap-highlight-color:transparent}
 html {
     font-size: 25.6px !important;
 }
 body {
-    font-size: 16px;
+  font-family: -apple-system-font,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size: 16px;
+  overflow-x: hidden;
+  background-color:#fbf9fe;
 }
+
+a{text-decoration:none;color:#333;}
+.pull-right {float: right;}
+.pull-left {float: left;}
+
+
+.bar{position:fixed;right:0;left:0;z-index:10;height:2.2rem;padding-right:.5rem;padding-left:.5rem;background-color:#09bb07;-webkit-backface-visibility:hidden;backface-visibility:hidden; color:#FFF;}
+.bar-nav{top:0}
+.title{position:absolute;display:block;width:100%;padding:0;margin:0 -.5rem;font-size:.85rem;font-weight:500;line-height:2.2rem;color:#FFF;text-align:center;white-space:nowrap}
+.title a{color:inherit}
+.bar .icon{position:relative;z-index:20;padding:.6rem .1rem;font-size:1.2rem;line-height:1.2rem; color:#FFF;}
+.bar-nav i, .bar-nav i {
+    font-size: 1.2rem;
+}
+
+.weui-tab__panel{ padding-bottom:55px; padding-top:2.2rem;}
+
+.weui-tabbar__item i { font-size: 1.2rem;}
+.weui-tabbar__item, {color:#999;  }
+.weui-bar__item_on, .weui-bar__item_on i {color:#09bb07; }
