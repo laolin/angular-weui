@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="lib/weui.min.css">
   <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="_core/app.css">
+  <link rel="stylesheet" href="main/main.css">
 </head>
 <body>
 <div class="weui-tab">
@@ -17,7 +17,7 @@
     <h1 class="title">PageTitle</h1>
     <a  href="javascript:;" onClick="javascript:history.back(-1);" class="icon pull-left">
     <i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-    <a href="/ucenter/member/login.html" class="icon pull-right"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+    <a href="#" class="icon pull-right"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
   </header>
             
 
@@ -25,30 +25,23 @@
 
   
   
-    <div class="weui-tab__panel content">
-      <ul class="menu">
-        <li><a href="#!/view1">view1</a></li>
-        <li><a href="#!/view2">view2</a></li>
-        <i class="fa fa-user" aria-hidden="true"></i>
-      </ul>
-    
+    <div class="weui-tab__panel content">    
       <div ng-view></div>
-
     </div>
     <div class="weui-tabbar">
-        <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+        <a href="#!/index" class="weui-tabbar__item weui-bar__item_on">
             <i class="fa fa-home" aria-hidden="true"></i>
             <p class="weui-tabbar__label">首页</p>
         </a>
-        <a href="javascript:;" class="weui-tabbar__item">
+        <a href="#!/list" class="weui-tabbar__item">
             <i class="fa fa-university" aria-hidden="true"></i>
             <p class="weui-tabbar__label">列表</p>
         </a>
-        <a href="javascript:;" class="weui-tabbar__item">
+        <a href="#!/search" class="weui-tabbar__item">
             <i class="fa fa-search" aria-hidden="true"></i>
             <p class="weui-tabbar__label">发现</p>
         </a>
-        <a href="javascript:;" class="weui-tabbar__item">
+        <a href="#!/my" class="weui-tabbar__item">
             <i class="fa fa-user" aria-hidden="true"></i>
             <p class="weui-tabbar__label">我</p>
         </a>
@@ -59,8 +52,13 @@
 
   <script src="lib/angular.js"></script>
   <script src="lib/angular-route.js"></script>
-  <script src="_core/app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
+  <script src="main/main.js"></script>
+  <script src="modules/index/index.js"></script>
+  <script src="modules/my/my.js"></script>
+  <script src="modules/list/list.js"></script>
+  <script src="modules/search/search.js"></script>
+  <script>
+    initApp('myApp',['ngRoute', 'myApp.index', 'myApp.my', 'myApp.list', 'myApp.search'],'/index');
+  </script>
 </body>
 </html>
