@@ -49,13 +49,14 @@
 
   <script src="lib/angular.js"></script>
   <script src="lib/angular-route.js"></script>
-  <script src="common/main.js"></script>
-  <script src="modules/index/index.js"></script>
-  <script src="modules/my/my.js"></script>
-  <script src="modules/list/list.js"></script>
-  <script src="modules/search/search.js"></script>
+  
+  <script src="modules/index/index.module.js"></script>
+  <script src="modules/my/my.module.js"></script>
+  <script src="modules/list/list.module.js"></script>
+  <script src="modules/search/search.module.js"></script>
+
+  <script src="modules/app.module.js"></script>
   <script>
-    initApp('myApp',['ngRoute', 'myApp.main','myApp.index', 'myApp.my', 'myApp.list', 'myApp.search'],'/index');
   </script>
 </body>
 </html>
