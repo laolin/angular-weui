@@ -1,7 +1,7 @@
 'use strict';
-angular.module('myApp.main', ['ngRoute'])
+angular.module('myApp.main', [])
 .controller('mainController', ['$scope',function($scope) {
-  $scope.appTitle='AppName';
+  $scope.appTitle='QGS Shops Lister';
   $scope.pageTitle='Page Name';
 }])
 ;
