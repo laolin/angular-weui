@@ -9,6 +9,9 @@ angular.module('myApp.index', ['ngRoute'])
   });
 }])
 
-.controller('indexCtrl', [function() {
+.controller('indexCtrl', ['$scope',function($scope) {
+  $scope.a='123';
+  $scope.b='BASF';
 
-}]);
+}])
+;
