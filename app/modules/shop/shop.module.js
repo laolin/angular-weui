@@ -7,14 +7,17 @@ angular.module('myApp.shop', ['ngRoute'])
     templateUrl: 'modules/shop/shop.template.html',
     controller: ['$scope','$http','$log',function shopCtrl($scope,$http,$log) {
       var D={};
-      $scope.D=D;
-      $scope.searching=false;
-      $scope.searchWords='';
-      $scope.searchHistoryMax=4;
-      $scope.searchHistory=[];
-      D.shops=[];
-
-      D.apiRoot='http://127.0.0.1/git-root/Api-core/src';
+      var init=function() {
+        $log.log(D);
+        $scope.D=D;
+        $scope.searching=false;
+        $scope.searchWords='';
+        $scope.searchHistoryMax=4;
+        $scope.searchHistory=[];
+        D.shops=[];
+        D.apiRoot='http://api.qinggaoshou.com';
+      }
+      if(!D.apiRoot) init();
       
       $scope.getData = function (w){
         var old_index;

@@ -1,7 +1,7 @@
 'use strict';
 angular.module('myApp.main', [])
 .controller('mainController', ['$scope',function($scope) {
-  $scope.appTitle='QGS Shops Lister';
+  $scope.appTitle='QGS Shops';
   $scope.pageTitle='Page Name';
 }])
 ;

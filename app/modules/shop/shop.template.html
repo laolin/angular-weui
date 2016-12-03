@@ -36,7 +36,11 @@
     <div class="weui-panel__bd">
         <div class="weui-media-box weui-media-box_text" ng-repeat='shop in D.shops'>
             <h4 class="weui-media-box__title">{{shop.name}}</h4>
-            <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+            <p class="weui-media-box__desc">
+                 {{shop.tel}},
+                [5星,4星,3星,2星,1星]=[{{shop.stars}}](共{{shop.star_count}}),
+                  {{shop.region_name}}, {{shop.addr}}    
+            </p>
         </div>
     </div>
     <div class="weui-panel__ft">
