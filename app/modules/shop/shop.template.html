@@ -1,0 +1,53 @@
+  <div  class="">
+
+    <div class="weui-search-bar pull-right">
+      <a ng-click="getData()" class="weui-btn weui-btn_mini weui-btn_primary">搜索</a>
+    </div>
+ 
+    <div class="weui-search-bar" id="search_bar">
+      <div class="weui-search-bar__form">
+          <div class="weui-search-bar__box">
+              <i class="weui-icon-search cur-p" ng-click="getData()"></i>
+              <input type="search" class="weui-search-bar__input" ng-model="searchWords" value="" id="search_input" placeholder="店名/地址/电话" />
+              <a ng-click="searchWords=''" class="weui-icon-clear cur-p" id="search_clear"></a>
+          </div>
+      </div>
+    </div>
+  </div>
+    
+<div class="weui-cells weui-cells_access search_show" ng-if="searchHistory.length" id="search_show">
+    
+    <div class="weui-footer "><a>搜索历史</a></div>
+    <div class="weui-cell" ng-repeat='sword in searchHistory track by $index '>
+      <div class="weui-cell__bd weui-cell_primary" ng-click=" getData(searchWords=searchHistory[$index]); ">
+        <p class='cur-p'>{{sword}}</p>
+      </div>
+    </div>
+</div>
+      
+<div class="weui-loadmore" ng-if='searching'>
+    <i class="weui-loading"></i>
+    <span class="weui-loadmore__tips">正在加载</span>
+</div>
+<div class="weui-loadmore weui-loadmore_line"  ng-if='D.shops.length==0'>
+    <span class="weui-loadmore__tips">暂无数据</span>
+</div>
+<div class="weui-panel weui-panel_access" ng-if='D.shops.length'>
+    <div class="weui-panel__bd">
+        <div class="weui-media-box weui-media-box_text" ng-repeat='shop in D.shops'>
+            <h4 class="weui-media-box__title">{{shop.name}}</h4>
+            <p class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+        </div>
+    </div>
+    <div class="weui-panel__ft">
+        <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+            <div class="weui-cell__bd">查看更多</div>
+            <span class="weui-cell__ft"></span>
+        </a>    
+    </div>
+</div>
+
+<div class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+    <span class="weui-loadmore__tips"></span>
+</div>
+

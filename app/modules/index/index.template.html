@@ -1,4 +1,21 @@
-<div xng-controller="indexCtrl">
-欢迎光临，此App仅供内部测试，如果您未经授权使用此App，请立刻关闭此APP，谢谢。<br/>
-<span ng-if='ip'>您的IP地址（<b ng-bind='ip'></b>）系统已记录。</span>
+
+<div xng-controller="indexCtrl" class="weui-msg">
+  <i class="weui-icon-info weui-icon_msg"></i>
+<div class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+    <span class="weui-loadmore__tips"></span>
 </div>
+
+欢迎光临<br/>
+<b ng-bind='ip'></b><br/>
+此App仅供内部测试<br/>
+如果您未经授权使用此App，请立刻关闭此APP，谢谢。<br/>
+<br/>
+<a href="#!/shop" class="weui-btn weui-btn_mini weui-btn_primary">继续测试</a>
+
+<div class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+    <span class="weui-loadmore__tips"></span>
+</div>
+
+
+</div>
+

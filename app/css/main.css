@@ -28,3 +28,4 @@ a{text-decoration:none;color:#333;}
 .weui-tabbar__item i { font-size: 1.2rem;}
 .weui-tabbar__item, {color:#999;  }
 .weui-bar__item_on, .weui-bar__item_on i {color:#09bb07; }
+.weui-btn, .cur-p {cursor:pointer}
