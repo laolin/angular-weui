@@ -33,9 +33,12 @@
     <span class="weui-loadmore__tips">暂无数据</span>
 </div>
 <div class="weui-panel weui-panel_access" ng-if='D.shops.length'>
+    <div class="weui-panel__hd">
+      显示前{{D.shops.length}}家店
+    </div>
     <div class="weui-panel__bd">
         <div class="weui-media-box weui-media-box_text" ng-repeat='shop in D.shops'>
-            <h4 class="weui-media-box__title">{{shop.name}}</h4>
+            <h4 class="weui-media-box__title">{{$index+1}}:{{shop.name}}</h4>
             <p class="weui-media-box__desc">
                  {{shop.tel}},
                 [5星,4星,3星,2星,1星]=[{{shop.stars}}](共{{shop.star_count}}),
