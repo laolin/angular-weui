@@ -1,13 +1,17 @@
 'use strict';
-angular.module('myApp.main', [])
-.controller('mainController', ['$scope',function($scope) {
-  $scope.pageTitle='QGS Shops';
-  $scope.pageName='Page Name';
-}])
-;
-    
+
+
 // Declare app level module which depends on views, and components
-angular.module('myApp', ['ngRoute',  'myApp.shop','myApp.main','myApp.index', 'myApp.my', 'myApp.list', 'myApp.search']).
+angular.module('myApp', [
+    'myApp.shop',
+    
+    'myApp.index',
+    'myApp.my',
+    'myApp.list',
+    'myApp.search',
+    
+    'common'
+  ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 

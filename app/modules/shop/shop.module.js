@@ -5,7 +5,7 @@ angular.module('myApp.shop', ['ngRoute'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/shop', {
     templateUrl: 'modules/shop/shop.template.html',
-    controller: ['$scope','$http','$log',function shopCtrl($scope,$http,$log) {
+    controller: ['$scope','$http','$log','Comm_AppData',function shopCtrl($scope,$http,$log,Comm_AppData) {
       var D={};
       var init=function() {
         $log.log(D);
@@ -16,8 +16,11 @@ angular.module('myApp.shop', ['ngRoute'])
         $scope.searchHistory=[];
         D.shops=[];
         D.apiRoot='http://api.qinggaoshou.com';
+        Comm_AppData.setPageTitle('店列表 - 满足满意');
+        Comm_AppData.setPageName('店列表');
+
       }
-      if(!D.apiRoot) init();
+      init();
       
       $scope.getData = function (w){
         var old_index;
