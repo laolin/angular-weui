@@ -1,0 +1,9 @@
+<div class="weui-tabbar">
+
+  <a ng-repeat='tab in $ctrl.tabsInfo track by $index' href="{{tab.href}}"
+    ng-click="$ctrl.activeTab($index)"
+    class="weui-tabbar__item{{tab.active?' weui-bar__item_on':''}}">
+      <i class="fa fa-{{tab.icon}}" aria-hidden="true"></i>
+      <p class="weui-tabbar__label">{{tab.name}}</p>
+  </a>
+</div>

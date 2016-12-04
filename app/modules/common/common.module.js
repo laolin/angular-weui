@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('common', [
-    'common.appData',
+    'comm.data',
+    'comm.UiTabbar',
     'ngRoute'
   ]);

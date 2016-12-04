@@ -30,22 +30,7 @@
       </div>
     </div>
     <div class="weui-tabbar">
-        <a href="#!/index" class="weui-tabbar__item weui-bar__item_on">
-            <i class="fa fa-home" aria-hidden="true"></i>
-            <p class="weui-tabbar__label">首页</p>
-        </a>
-        <a href="#!/list" class="weui-tabbar__item">
-            <i class="fa fa-university" aria-hidden="true"></i>
-            <p class="weui-tabbar__label">列表</p>
-        </a>
-        <a href="#!/search" class="weui-tabbar__item">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <p class="weui-tabbar__label">发现</p>
-        </a>
-        <a href="#!/my" class="weui-tabbar__item">
-            <i class="fa fa-user" aria-hidden="true"></i>
-            <p class="weui-tabbar__label">我</p>
-        </a>
+      <comm-ui-tabbar></comm-ui-tabbar>
     </div>
 </div>
 
@@ -53,10 +38,13 @@
 
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-route.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
   
   <script src="modules/common/common.module.js"></script>
-  <script src="modules/common/app-data/app-data.module.js"></script>
-  <script src="modules/common/app-data/app-data.service.js"></script>
+  <script src="modules/common/data/comm-data.module.js"></script>
+  <script src="modules/common/data/comm-data.service.js"></script>
+  <script src="modules/common/ui/comm-ui-tabbar.module.js"></script>
+  <script src="modules/common/ui/comm-ui-tabbar.component.js"></script>
   
   <script src="modules/index/index.module.js"></script>
   <script src="modules/shop/shop.module.js"></script>
