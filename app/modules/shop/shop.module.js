@@ -15,7 +15,7 @@ angular.module('myApp.shop', ['ngRoute'])
         $scope.searchHistoryMax=4;
         $scope.searchHistory=[];
         D.shops=[];
-        D.apiRoot='http://api.qinggaoshou.com';
+        D.apiRoot=gAppIndexConfig.apiShopList;
         CommData.setPageName('店列表');
 
       }
