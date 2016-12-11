@@ -7,8 +7,9 @@ var gAppIndexConfig={};
 
 
 
-  //gAppIndexConfig.apiShopList='http://api.qinggaoshou.com';
-  gAppIndexConfig.apiShopList='http://127.0.0.1/git-root/Api-core/src';
+  gAppIndexConfig.dataShops={};
+  gAppIndexConfig.dataShops.apiShopList='/git-root/Api-core/src';
+  gAppIndexConfig.dataShops.init=false;
   
   
   

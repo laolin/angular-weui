@@ -6,16 +6,18 @@ angular.module('myApp.shop', ['ngRoute'])
   $routeProvider.when('/shop', {
     templateUrl: 'modules/shop/shop.template.html',
     controller: ['$scope','$http','$log','CommData',function shopCtrl($scope,$http,$log,CommData) {
-      var D={};
+      var D=gAppIndexConfig.dataShops;
       var init=function() {
         $log.log(D);
         $scope.D=D;
-        $scope.searching=false;
-        $scope.searchWords='';
-        $scope.searchHistoryMax=4;
-        $scope.searchHistory=[];
-        D.shops=[];
-        D.apiRoot=gAppIndexConfig.apiShopList;
+        if(! D.init) {//未初始化
+          D.init=true;
+          D.searchHistoryMax=4;
+          D.searching=false;
+          D.searchWords='';
+          D.searchHistory=[];
+          D.shops=[];
+        }
         CommData.setPageName('店列表');
 
       }
@@ -23,21 +25,21 @@ angular.module('myApp.shop', ['ngRoute'])
       
       $scope.getData = function (w){
         var old_index;
-        if(typeof(w)!=='undefined')$scope.searchWords=w;
-        $scope.searching=true;
-        if($scope.searchWords) {
-          old_index = $scope.searchHistory.indexOf($scope.searchWords);
-          if(old_index>=0) $scope.searchHistory.splice(old_index,1);
-          $scope.searchHistory.splice(0,0,$scope.searchWords);//insert as the first
-          if($scope.searchHistory.length>$scope.searchHistoryMax)$scope.searchHistory.pop();
+        if(typeof(w)!=='undefined')D.searchWords=w;
+        D.searching=true;
+        if(D.searchWords) {
+          old_index = D.searchHistory.indexOf(D.searchWords);
+          if(old_index>=0) D.searchHistory.splice(old_index,1);
+          D.searchHistory.splice(0,0,D.searchWords);//insert as the first
+          if(D.searchHistory.length>D.searchHistoryMax)D.searchHistory.pop();
           
-          //$log.log('search word = '+$scope.searchWords);
+          //$log.log('search word = '+D.searchWords);
         }
-        $http.jsonp(D.apiRoot+'/foot/search?s='+ encodeURI($scope.searchWords) +'&callback=JSON_CALLBACK&r='+Date.now() )
+        $http.jsonp(D.apiShopList+'/foot/search?s='+ encodeURI(D.searchWords) +'&callback=JSON_CALLBACK&r='+Date.now() )
             .then(function(response) {
           $log.log(response);
           D.shops = response.data.data;
-          $scope.searching=false;
+          D.searching=false;
         });
         return false;
       }
