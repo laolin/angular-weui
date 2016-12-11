@@ -8,7 +8,7 @@
       <div class="weui-search-bar__form">
           <div class="weui-search-bar__box">
               <i class="weui-icon-search cur-p" ng-click="getData()"></i>
-              <input type="search" class="weui-search-bar__input" ng-model="D.searchWords" value="" id="search_input" placeholder="店名/地址/电话" />
+              <input type="search" class="weui-search-bar__input" ng-model="D.searchWords" value="" id="search_input" placeholder="店名/地址/电话"  ng-keyup="$event.keyCode == 13 && getData()"/>
               <a ng-click="D.searchWords=''" class="weui-icon-clear cur-p" id="search_clear"></a>
           </div>
       </div>
